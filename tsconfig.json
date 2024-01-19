@@ -5,6 +5,8 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["node", "vitest/globals", "@testing-library/jest-dom"],
+    
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -18,8 +20,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+
+    /* Set root path alias */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["./src/components/*"],
+    }
   },
-  "include": ["src"],
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
